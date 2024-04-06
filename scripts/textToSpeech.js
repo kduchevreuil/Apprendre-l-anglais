@@ -5,7 +5,7 @@ const synth = window.speechSynthesis;
 
 // Détection de la langue turque
 let defaultLang = "en-US"; // Définition de la langue par défaut comme anglais américain
-if (synth.getVoices().some(v => v.lang === "en")) {
+if (synth.getVoices().some(v => v.lang === "en-Us" || v.lang === "en")) {
   defaultLang = "en"; // Changer la langue par défaut en anglais si une voix turque est trouvée
 }
 
