@@ -4,6 +4,12 @@ let isSpeaking = false;
 
 // Set language to American English
 synth.lang = "en-US";
+// séléctionner la voix masculine
+let voices = synth.getVoices();
+let voice = voices.find((v) => v.name === "Google US English");
+synth.voice = voice;
+
+
 
 // Reading alternative description
 Allimages.forEach((image) => {
@@ -11,7 +17,10 @@ Allimages.forEach((image) => {
     e.preventDefault();
     let textimage = e.target.alt;
     let textReading = new SpeechSynthesisUtterance(textimage);
-    textReading.lang = "en"; // Use ISO language code for English
+    // Set the male language to English
+
+    textReading.lang = "en-US";
+    // Set
     textReading.pitch = 0.75; // Voice pitch (between 0 and 2, 1 being normal)
     textReading.rate = 1; // Voice speed (1 is normal, higher is faster)
     textReading.volume = 1.0; // Voice volume (between 0 and 1)

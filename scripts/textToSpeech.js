@@ -6,7 +6,10 @@ const synth = window.speechSynthesis;
 // Détection de la langue turque
 let defaultLang = "en-US"; // Définition de la langue par défaut comme anglais américain
 if (synth.getVoices().some(v => v.lang === "en-Us" || v.lang === "en")) {
-  defaultLang = "en"; // Changer la langue par défaut en anglais si une voix turque est trouvée
+  defaultLang = "en-Us"; // Changer la langue par défaut en anglais si une voix turque est trouvée
+  let voices = synth.getVoices();
+  let voice = voices.find((v) => v.name === "Google US English");
+  synth.voice = voice;
 }
 
 // Ajout d'un écouteur à chaque bouton pour la synthèse vocale
@@ -18,6 +21,8 @@ allButtons.forEach((button) => {
     // Création de l'objet de synthèse vocale
     let speechUtterance = new SpeechSynthesisUtterance(textToSpeak);
     speechUtterance.lang = defaultLang; // Utilisation de la langue par défaut
+    // séléctionner la voix masculine
+
 
     // Ajustement des propriétés pour une voix plus fluide
     speechUtterance.pitch = 0.75; // Hauteur de la voix (entre 0 et 2, 1 étant normal)
