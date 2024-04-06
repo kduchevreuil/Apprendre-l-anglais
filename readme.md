@@ -1,6 +1,6 @@
 # Site pour apprendre le turc :
 
-A voir ici : [Site pour apprendre le turc](https://kduchevreuil.github.io/Apprendre-l-anglais/)
+A voir ici : [Site pour apprendre l'anglais](https://kduchevreuil.github.io/Apprendre-l-anglais/)
 
 [![Image](./images/presentation.png)](https://kduchevreuil.github.io/Apprendre-l-anglais/)
 
