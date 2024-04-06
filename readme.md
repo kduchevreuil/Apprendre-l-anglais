@@ -2,7 +2,7 @@
 
 A voir ici : [Site pour apprendre l'anglais](https://kduchevreuil.github.io/Apprendre-l-anglais/)
 
-[![Image](./images/presentation.png)](https://kduchevreuil.github.io/Apprendre-l-anglais/)
+[![Image](./images/presentation1.png)](https://kduchevreuil.github.io/Apprendre-l-anglais/)
 
 ## Description :
 
