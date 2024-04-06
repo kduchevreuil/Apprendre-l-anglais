@@ -1,38 +1,34 @@
 const Allimages = document.querySelectorAll("#altToSpeech");
-let synth = speechSynthesis,
-  isSpeaking = true;
-// choıx de la langue turque
-let turkishVoice = window.speechSynthesis.getVoices().find((v) => v.lang === "tr" || v.lang === "tr-TR");
-if (turkishVoice) {
-  synth.lang = "en";
-} else {
-  synth.lang = "en-US";
-}
+let synth = window.speechSynthesis;
+let isSpeaking = false;
 
+// Set language to American English
+synth.lang = "en-US";
 
-// Lecture de la description alternative
+// Reading alternative description
 Allimages.forEach((image) => {
   image.addEventListener("click", (e) => {
     e.preventDefault();
     let textimage = e.target.alt;
     let textReading = new SpeechSynthesisUtterance(textimage);
-    textReading.lang = "en"; // Utiliser le code de langue ISO pour le turc
-    textReading.pitch = 0.75; // Hauteur de la voix (entre 0 et 2, 1 étant normal)
-    textReading.rate = 1; // Vitesse de la voix (1 est normal, plus élevé est plus rapide)
-    textReading.volume = 1.0; // Volume de la voix (entre 0 et 1)
+    textReading.lang = "en"; // Use ISO language code for English
+    textReading.pitch = 0.75; // Voice pitch (between 0 and 2, 1 being normal)
+    textReading.rate = 1; // Voice speed (1 is normal, higher is faster)
+    textReading.volume = 1.0; // Voice volume (between 0 and 1)
 
-    // Vérifier si une voix turque est disponible
-    let turkishVoice = window.speechSynthesis.getVoices().find((v) => v.lang === "en-US" || v.lang === "en");
+    // Check if an American English voice is available
+    let americanVoice = window.speechSynthesis.getVoices().find((v) => v.lang === "en-US" || v.lang === "en");
 
-    if (turkishVoice) {
-      textReading.voice = turkishVoice;
+    if (americanVoice) {
+      // Use the American English voice if available
+      textReading.voice = americanVoice;
     } else {
-      // Si aucune voix turque n'est disponible, utiliser la première voix disponible compatible avec le turc
+      // If no American English voice is available, use the first available voice compatible with English
       let compatibleVoice = window.speechSynthesis.getVoices().find((v) => v.lang.startsWith("en-US") || v.voiceURI.includes("US") || v.voiceURI.includes("eng"));
       if (compatibleVoice) {
         textReading.voice = compatibleVoice;
       } else {
-        // Si aucune voix turque n'est disponible, utiliser la première voix disponible
+        // If no American English voice is available, use the first available voice
         textReading.voice = window.speechSynthesis.getVoices()[0];
       }
     }

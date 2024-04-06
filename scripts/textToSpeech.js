@@ -4,11 +4,9 @@ const allButtons = document.querySelectorAll("#textToSpeech");
 const synth = window.speechSynthesis;
 
 // Détection de la langue turque
-let turkishVoice = synth.getVoices().find((v) => v.lang === "en-US");
-// Définition de la langue par défaut
-let defaultLang = "en-US"; // Turc turc (Turquie)
-if (turkishVoice) {
-  defaultLang = "en";
+let defaultLang = "en-US"; // Définition de la langue par défaut comme anglais américain
+if (synth.getVoices().some(v => v.lang === "en")) {
+  defaultLang = "en"; // Changer la langue par défaut en anglais si une voix turque est trouvée
 }
 
 // Ajout d'un écouteur à chaque bouton pour la synthèse vocale
@@ -46,4 +44,3 @@ allButtons.forEach((button) => {
     synth.speak(speechUtterance);
   });
 });
-
