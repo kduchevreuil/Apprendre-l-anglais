@@ -22,13 +22,13 @@ Allimages.forEach((image) => {
     textReading.volume = 1.0; // Volume de la voix (entre 0 et 1)
 
     // Vérifier si une voix turque est disponible
-    let turkishVoice = window.speechSynthesis.getVoices().find((v) => v.lang === "en" || v.lang === "en-US");
+    let turkishVoice = window.speechSynthesis.getVoices().find((v) => v.lang === "en-US" || v.lang === "en");
 
     if (turkishVoice) {
       textReading.voice = turkishVoice;
     } else {
       // Si aucune voix turque n'est disponible, utiliser la première voix disponible compatible avec le turc
-      let compatibleVoice = window.speechSynthesis.getVoices().find((v) => v.lang.startsWith("eng") || v.voiceURI.includes("English") || v.voiceURI.includes("en-US") || v.voiceURI.includes("en"));
+      let compatibleVoice = window.speechSynthesis.getVoices().find((v) => v.lang.startsWith("en-US") || v.voiceURI.includes("US") || v.voiceURI.includes("eng"));
       if (compatibleVoice) {
         textReading.voice = compatibleVoice;
       } else {
