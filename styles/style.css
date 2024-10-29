@@ -132,14 +132,14 @@ body {
 
   article {
     color: black;
-    border: 10px double black;
+    border: 10px double rgb(255, 255, 255);
+    background-color: black;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
     padding: 5px;
     font-size: 2vh;
-    background-color: white;
     margin-top: 10px;
   }
   article h3 {
@@ -219,6 +219,7 @@ body {
     width: 100%;
     cursor: pointer;
     filter: contrast(150%);
+    border: #ffffff 5px solid;
   }
   /* 
       ---- Style du vocabulaire ---
@@ -331,14 +332,14 @@ body {
 
   article {
     color: black;
-    border: 10px double black;
+    border: 10px double rgb(255, 255, 255);
+    background-color: black;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
     padding: 5px;
     font-size: 2vh;
-    background-color: white;
     margin-top: 10px;
   }
   article h3 {
@@ -418,6 +419,7 @@ body {
     width: 100%;
     cursor: pointer;
     filter: contrast(150%);
+    border: #ffffff 5px solid;
   }
   /* 
       ---- Style du vocabulaire ---
@@ -532,14 +534,14 @@ body {
 
   article {
     color: black;
-    border: 10px double black;
+    border: 10px double rgb(255, 255, 255);
+    background-color: black;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
     padding: 5px;
     font-size: 2vh;
-    background-color: white;
     margin-top: 10px;
   }
   article h3 {
@@ -619,6 +621,7 @@ body {
     width: 100%;
     cursor: pointer;
     filter: contrast(150%);
+    border: #ffffff 5px solid;
   }
   /* 
       ---- Style du vocabulaire ---
@@ -734,7 +737,8 @@ body {
 
   article {
     color: black;
-    border: 10px double black;
+    border: 10px double rgb(255, 255, 255);
+    background-color: black;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -742,7 +746,6 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 1.8rem;
-    background-color: white;
     margin-top: 10px;
     margin: auto;
     align-items: center;
@@ -824,10 +827,10 @@ body {
     padding: 0.3rem;
   }
   article img {
-    width: 80%;
+    width: 100%;
     cursor: pointer;
     filter: contrast(150%);
-    margin: auto;
+    border: #ffffff 5px solid;
   }
   /* 
       ---- Style du vocabulaire ---
